@@ -3,15 +3,15 @@ import React from 'react'
  
 import { BrowserRouter } from  'react-router-dom' // essa importação mudou
  
-import Menu from '../components/layout/Menu'
-import Content from '../components/layout/Content'
+import Menu from '../components/layout/menu'
+import Content from '../components/layout/content'
  
 const App = props => (
     <div className="App">
-        <BrowserRouter> // Usamos a importação acima bem aqui
+        <BrowserRouter> 
             <Menu />
             <Content />
-        </BrowserRouter> // Aqui também
+        </BrowserRouter> 
     </div>
 )
  
