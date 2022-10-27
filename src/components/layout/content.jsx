@@ -1,20 +1,29 @@
-import "./content.css";
-import React from "react";
-import { Routes, Route } from "react-router-dom"; // Importe esses arquivos
- 
-import Home from "../../views/exemples/home";
-import About from "../../views/exemples/about"
- 
-const Content = props => (
-  <main className="Content">
-    {/* Toda essa parte está diferente da do professor, analisem as diferenças */}
-    <Routes>
-      <Route path="/about" element={<About />} />
-      <Route path="/" exact element={<Home />} />
+import './content.css'
+import React from 'react'
+import { Switch, Route } from 'react-router-dom'
 
-    </Routes>
-    {/* --------------------------------------------------- */}
-  </main>
-);
- 
-export default Content;
+import Home from '../../views/exemples/home'
+import Param from '../../views/exemples/param'
+import About from '../../views/exemples/about'
+import NotFound from '../../views/exemples/notFound'
+
+const Content = props => (
+    <main className="Content">
+        <Switch>
+            <Route exact path="/">
+                <Home />
+            </Route>
+            <Route path="/about">
+                <About />
+            </Route>
+            <Route path="/param/:id">
+                <Param />
+            </Route>
+            <Route path="*">
+                <NotFound />
+            </Route>
+        </Switch>
+    </main>
+)
+
+export default Content
